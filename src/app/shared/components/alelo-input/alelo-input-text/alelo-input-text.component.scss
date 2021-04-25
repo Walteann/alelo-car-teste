@@ -1,4 +1,5 @@
 @import '/src/styles/partials/colors';
+@import '/src/styles.scss';
 
 input {
   width: 100%;
@@ -19,12 +20,12 @@ input:disabled {
 }
 
 label {
-  display: block;
+  @include displayBlockColor($color-neutra-7);
+
   font-weight: bold;
-  color: $color-neutra-7;
 }
 
 small {
-  display: block;
-  color: $color-error;
+  @include displayBlockColor($color-neutra-7);
+
 }

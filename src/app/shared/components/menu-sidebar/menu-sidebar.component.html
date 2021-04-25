@@ -6,7 +6,7 @@
   <h1>Alelo Frota</h1>
 
   <ul>
-    <li *ngFor="let menu of menus" (click)="redirectToRoute(menu.url)" [ngClass]="menu.url === urlCurrent ? 'selected' : ''">
+    <li *ngFor="let menu of menus" [routerLink]="menu.url" (click)="redirectToRoute(menu.url)" [routerLinkActive]="['selected']">
       <img src="assets/icons/{{menu.icone}}.svg" [alt]="menu.name">
       <span>{{menu.name}}</span>
     </li>

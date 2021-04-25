@@ -19,23 +19,11 @@ describe('MenuSidebarComponent', () => {
 
   const menuCollapseComponent = jasmine.createSpyObj('MenuCollapseComponent', ['changeCollapse']);
 
-  const mockRouter = {
-    navigate: jasmine.createSpy('navigate'),
-    events: of({
-      routerEvent: {
-        url: '/reports'
-      }
-    })
-  };
-
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [
         RouterTestingModule,
         MenuCollapseModule
-      ],
-      providers: [
-        { provide: Router, useValue: mockRouter },
       ],
       declarations: [
         MenuSidebarComponent
@@ -45,12 +33,6 @@ describe('MenuSidebarComponent', () => {
     component = fixture.componentInstance;
   });
 
-  it('should init component', () => {
-    expect(component).toBeTruthy();
-
-    component.ngOnInit();
-    expect(component.urlCurrent).toEqual('/reports');
-  });
 
   it('should check if sideBarMenu has class menu-sidebar-collapsed', () => {
     component.changeMenuSideBar(true);
@@ -74,40 +56,3 @@ describe('MenuSidebarComponent', () => {
 
 });
 
-describe('MenuSidebarComponent with onother Router', () => {
-  let component: MenuSidebarComponent;
-
-  const mockRouter = {
-    navigate: jasmine.createSpy('navigate'),
-    events: of({
-      routerEvent: {
-        url: null
-      }
-    })
-  };
-
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [
-        RouterTestingModule,
-        MenuCollapseModule
-      ],
-      providers: [
-        { provide: Router, useValue: mockRouter },
-      ],
-      declarations: [
-        MenuSidebarComponent
-      ],
-    }).compileComponents();
-    const fixture = TestBed.createComponent(MenuSidebarComponent);
-    component = fixture.componentInstance;
-  });
-
-  it('should test urlCurrent is undefined', () => {
-
-    component.ngOnInit();
-
-    expect(component.urlCurrent).toBeNull();
-  });
-
-});

@@ -1,7 +1,12 @@
 @import '/src/styles/partials/colors';
 
+@mixin showElementsMenuSidebar($property) {
+  img, h1, ul {
+    display: $property;
+  }
+}
+
 .sidebar {
-  background-color: $green-light;
   height: 100%;
   width: 300px;
   position: fixed;
@@ -41,49 +46,22 @@
       }
     }
 
-    li:hover {
+    li:hover, li.selected {
       background-color: $color-neutra-3;
       border-radius: $space-8;
     }
 
-    li.selected {
-      background-color: $color-neutra-3;
-      border-radius: $space-8;
-    }
   }
-
 
 }
 
-
-@media only screen and (max-width: 420px) {
-
-  #sideBarMenu {
-    width: 0;
-    img, h1, ul {
-      display: none;
-    }
-
-    #logo {
-      margin-top: $space-16
-    }
-  }
-
-  #sideBarMenu.menu-sidebar-collapsed {
-    width: 300px;
-    img, h1, ul {
-      display: block;
-    }
-  }
-}
 
 @media only screen and (max-width: 768px) {
 
   #sideBarMenu {
     width: 0;
-    img, h1, ul {
-      display: none;
-    }
+
+    @include showElementsMenuSidebar(none);
 
     #logo {
       margin-top: $space-16
@@ -92,13 +70,9 @@
 
   #sideBarMenu.menu-sidebar-collapsed {
     width: 300px;
-    img, h1, ul {
-      display: block;
-    }
+
+    @include showElementsMenuSidebar(block);
   }
 
-  // menu-collapse {
-  //   display: block;
-  // }
 }
 

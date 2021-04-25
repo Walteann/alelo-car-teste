@@ -1,5 +1,5 @@
 @import "/src/styles/partials/colors";
-
+@import '/src/styles.scss';
 .container {
   padding: 16px;
 
@@ -18,23 +18,7 @@
 
 /* The Modal (background) */
 .modal {
-  position: fixed;
-  display: flex;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 15px;
-  background-color: rgba(0,0,0,0.5);
-  z-index: 2;
-  cursor: pointer;
-
-  margin: $space-24 $space-24 $space-24 310px;
-  min-height: 100%;
-  border-radius: $space-32;
-
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
+  @include mainOlerlay;
 }
 
 /* Modal Content/Box */
@@ -43,4 +27,11 @@
   border: 1px solid #888;
   width: 30%; /* Could be more or less, depending on screen size */
   border-radius: $space-8;
+}
+
+
+@media only screen and (max-width: 768px) {
+  .modal {
+    @include mainOverlayFull;
+  }
 }

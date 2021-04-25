@@ -1,11 +1,15 @@
 @import '/src/styles/partials/colors';
 
+@mixin buttonColorAndBackground($background, $color) {
+  background-color: $background;
+  color: $color;
+}
+
 button  {
-  background-color: $color-neutra-8;
+  @include buttonColorAndBackground($color-neutra-8, $color-neutra-1);
   border: none;
   padding: 15px 25px;
   cursor: pointer;
-  color: $color-neutra-1;
   border-radius: $space-4;
   transition: .5s;
   min-width: 130px;
@@ -17,19 +21,15 @@ button:hover {
 }
 
 button.magenta {
-  background-color: $magenta;
-  color: $color-neutra-1;
+  @include buttonColorAndBackground($magenta, $color-neutra-1);
 }
 
 button.white {
-  background-color: $color-neutra-1;
-  color: $color-neutra-9;
+  @include buttonColorAndBackground($color-neutra-1, $color-neutra-9);
 }
 
 button.white-magenta {
-  background-color: transparent;
-  color: $magenta;
-
+  @include buttonColorAndBackground(transparent, $magenta);
 }
 
 button.white-magenta:hover {
@@ -37,8 +37,7 @@ button.white-magenta:hover {
 }
 
 button.white-black {
-  background-color: transparent;
-  color: $color-neutra-9;
+  @include buttonColorAndBackground(transparent, $color-neutra-9);
 
 }
 

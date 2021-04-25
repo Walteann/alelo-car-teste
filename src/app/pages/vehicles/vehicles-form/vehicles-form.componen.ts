@@ -100,6 +100,10 @@ export class VehiclesFormComponent implements OnInit, OnDestroy {
     this.form.reset();
   }
 
+  goBack(): void {
+    this.router.navigate(['../'])
+  }
+
   private navigateToList(): void {
     this.router.navigate(['vehicles', 'list']);
   }

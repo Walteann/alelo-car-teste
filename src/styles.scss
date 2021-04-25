@@ -1,6 +1,44 @@
 /* You can add global styles to this file, and also import other style files */
 @import '/src/styles/partials/colors';
 
+@mixin marginBottom($size) {
+  margin-bottom: $size;
+}
+
+@mixin marginAll($size) {
+  margin: $size;
+}
+
+@mixin displayBlockColor($color) {
+  display: block;
+  color: $color;
+}
+
+@mixin mainOlerlay {
+  position: fixed;
+  display: flex;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 15px;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 2;
+  cursor: pointer;
+  margin: $space-24 $space-24 $space-24 310px;
+  min-height: 100%;
+  border-radius: $space-32;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin mainOverlayFull {
+  margin: $space-8;
+  height: 100%;
+  width: 100%;
+  border-radius: 0;
+  margin: 0;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -13,6 +51,13 @@ body {
 
 h1, h2, h3 {
   color: $color-neutra-8;
+}
+
+.btn-back-img {
+  width: 20px;
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
 }
 
 .container-flex-justify-between {
@@ -45,15 +90,15 @@ h1, h2, h3 {
 
 
 .m-bottom-36 {
-  margin-bottom: $space-36;
+  @include marginBottom($space-36);
 }
 
 .m-bottom-50 {
-  margin-bottom: 50px;
+  @include marginBottom(50px);
 }
 
 .m-bottom-72 {
-  margin-bottom: $space-36 * 2;
+  @include marginBottom($space-36 * 2);
 }
 
 .pointer {
@@ -61,10 +106,11 @@ h1, h2, h3 {
 }
 
 .m-g-16 {
-  margin: $space-16;
+  @include marginAll($space-16);
 }
 
 .m-g-36 {
+  @include marginAll($space-36);
   margin: $space-36;
 }
 
@@ -81,7 +127,7 @@ h1, h2, h3 {
 }
 
 .max-width-30-vw {
-  margin: 0;
+  @include marginAll(0);
   width: 30vw;
 }
 
@@ -103,14 +149,13 @@ h1, h2, h3 {
 
 
 @media only screen and (max-width: 420px) {
-
   .p-top-30  {
     padding-top: 40px;
   }
-
   .container-flex-justify-between {
-    margin: $space-16 ;
+    @include marginAll($space-16);
   }
+
 }
 
 
@@ -133,7 +178,7 @@ h1, h2, h3 {
   }
 
   .container-flex-justify-between {
-    margin: $space-16 ;
+    @include marginAll($space-16);
   }
 
 }

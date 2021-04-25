@@ -1,18 +1,18 @@
 @import "/src/styles/partials/colors";
+@import '/src/styles.scss';
 
 .input-radio {
   display: flex;
 }
 
 label {
-  display: block;
+  @include displayBlockColor($color-neutra-7);
   font-weight: bold;
   margin-bottom: $space-16;
-  color: $color-neutra-7;
 }
 
 .container {
-  display: block;
+  @include displayBlockColor($color-neutra-8);
   position: relative;
   padding-left: 35px;
   margin-bottom: 12px;
@@ -23,7 +23,6 @@ label {
   -ms-user-select: none;
   user-select: none;
   font-size: $font-size-14;
-  color: $color-neutra-8;
 
   input {
     position: absolute;

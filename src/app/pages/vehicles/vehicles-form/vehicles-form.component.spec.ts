@@ -199,7 +199,7 @@ describe('VehiclesFormComponent update', () => {
 
   let component: VehiclesFormComponent;
   let fixture: ComponentFixture<VehiclesFormComponent>;
-
+  let spyRouter;
   beforeEach(async () => {
 
     TestBed.configureTestingModule({
@@ -226,7 +226,9 @@ describe('VehiclesFormComponent update', () => {
     const vehicleService = TestBed.inject(VehiclesService);
     spyOn(vehicleService, 'findByIdVehicle').and.returnValue(of(vehiclesAll[0]));
     spyOn(vehicleService, 'createVehicle').and.returnValue(of(vehiclesAll[0]));
-    // spyOn(vehicleService, 'updateVehicle').and.returnValue(of(vehiclesAll[0]));
+    const router = TestBed.inject(Router);
+    spyRouter = spyOn(router, 'navigate');
+
 
   });
 
@@ -258,8 +260,6 @@ describe('VehiclesFormComponent update', () => {
   });
 
   it('onSubmit edit vehicles', async() => {
-    const router = TestBed.inject(Router);
-    const spy = spyOn(router, 'navigate');
 
 
     component.form.patchValue({
@@ -287,7 +287,7 @@ describe('VehiclesFormComponent update', () => {
 
 
     fixture.whenStable().then(() => {
-      expect(spy).toHaveBeenCalled();
+      expect(spyRouter).toHaveBeenCalled();
     })
 
   });
@@ -312,6 +312,13 @@ describe('VehiclesFormComponent update', () => {
     fixture.whenStable().then(() => {
       expect(spy).toHaveBeenCalled();
     })
+
+  });
+
+  it('should return page list', () => {
+
+    component.goBack();
+    expect(spyRouter).toHaveBeenCalled();
 
   });
 

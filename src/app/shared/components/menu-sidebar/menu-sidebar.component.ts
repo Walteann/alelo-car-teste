@@ -11,7 +11,7 @@ import { MenuCollapseComponent } from './../menu-collapse/menu-collapse.componen
   templateUrl: 'menu-sidebar.component.html',
   styleUrls: ['./menu-sidebar.component.scss']
 })
-export class MenuSidebarComponent implements OnInit, OnDestroy {
+export class MenuSidebarComponent {
 
   @ViewChild('menuCollapse', {static: false}) menuCollapse: MenuCollapseComponent;
 
@@ -40,29 +40,8 @@ export class MenuSidebarComponent implements OnInit, OnDestroy {
     },
   ]
 
-  constructor(
-    private router: Router
-  ) { }
-
-  ngOnInit(): void {
-   this.subscription = this.router.events
-    .subscribe((route: any) => {
-      if (route.routerEvent && route.routerEvent.url) {
-        this.urlCurrent = `/${route.routerEvent.url.split('/')[1]}`;
-      }
-   });
-
-  }
-
-  ngOnDestroy(): void {
-    if (this.subscription) {
-      this.subscription.unsubscribe();
-    }
-  }
-
   redirectToRoute(url: string): void {
     this.menuCollapse.changeCollapse();
-    this.router.navigate([url]);
   }
 
   changeMenuSideBar(isCollapsed: boolean): void {
