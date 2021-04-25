@@ -1,0 +1,46 @@
+@import "/src/styles/partials/colors";
+
+.container {
+  padding: 16px;
+
+  color: $color-neutra-8;
+  p {
+    font-size: $font-size-14;
+    margin: $space-8 0;
+  }
+
+  .clearfix {
+    margin-top: 3px;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+/* The Modal (background) */
+.modal {
+  position: fixed;
+  display: flex;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 15px;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 2;
+  cursor: pointer;
+
+  margin: $space-24 $space-24 $space-24 310px;
+  min-height: 100%;
+  border-radius: $space-32;
+
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  border: 1px solid #888;
+  width: 30%; /* Could be more or less, depending on screen size */
+  border-radius: $space-8;
+}

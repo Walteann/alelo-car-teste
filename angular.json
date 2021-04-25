@@ -28,7 +28,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "node_modules/ngx-toastr/toastr.css"
             ],
             "scripts": []
           },
@@ -123,6 +124,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "alelo-frota"
+    }
+  },
+  "defaultProject": "alelo-frota",
+  "cli": {
+    "analytics": "79cdb0c5-21dc-4e00-b834-d12fe4eafbb3"
+  }
 }

@@ -1,0 +1,18 @@
+<label *ngIf="label" [for]="formControlName">{{label}}</label>
+
+<div class="input-radio">
+  <div *ngFor="let radio of radioValues">
+    <label class="container">
+      <span class="description">{{radio.descricao}}</span>
+      <input
+        [value]="radio.value"
+        [name]="name"
+        [formControl]="control"
+        type="radio"
+      >
+      <span class="checkmark"></span>
+    </label>
+  </div>
+</div>
+
+<alelo-error [id]="formControlName + '--error'" [control]="control"></alelo-error>

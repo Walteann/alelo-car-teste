@@ -1,0 +1,11 @@
+<label *ngIf="label" [for]="formControlName">{{label}}</label>
+
+<input
+  [name]="formControlName"
+  [type]="type"
+  [placeholder]="placeholder"
+  [formControl]="control"
+  (keyup.enter)="onEnter()">
+
+
+  <alelo-error [id]="formControlName + '--error'" [control]="control"></alelo-error>

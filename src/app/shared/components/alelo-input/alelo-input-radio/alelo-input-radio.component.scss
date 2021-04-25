@@ -1,0 +1,79 @@
+@import "/src/styles/partials/colors";
+
+.input-radio {
+  display: flex;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: $space-16;
+  color: $color-neutra-7;
+}
+
+.container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  margin-right: 50px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-size: $font-size-14;
+  color: $color-neutra-8;
+
+  input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    border: 2px solid $color-neutra-9;
+  }
+
+  .checkmark:after {
+    top: 4px;
+    left: 4px;
+    width: 17px;
+    height: 17px;
+    border-radius: 50%;
+    background: $green;
+  }
+
+  input ~ .checkmark {
+    background-color: $color-neutra-1;
+  }
+
+  input:checked ~ .checkmark {
+    background-color: $color-neutra-1;
+  }
+
+  input:checked ~ .checkmark:after {
+    display: block;
+  }
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+  border-radius: 50%;
+  border: 2px solid $color-neutra-8;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.description {
+  display: block;
+  padding-top: 5px;
+  padding-left: 10px;
+  font-weight: normal;
+}

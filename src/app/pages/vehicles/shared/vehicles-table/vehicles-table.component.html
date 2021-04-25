@@ -1,0 +1,32 @@
+<!-- TODO: COLOCAR BORDER_RADIUS DPS -->
+<table>
+  <thead>
+    <th>Plate</th>
+    <th>Model</th>
+    <th>Manufacturer</th>
+    <th>Status</th>
+    <th>Action</th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let vehicle of vehicles; let i = index;">
+      <td>{{vehicle.plate}}</td>
+      <td>{{vehicle.model}}</td>
+      <td>{{vehicle.manufacturer}}</td>
+      <td><span class="status" [ngClass]="vehicle.status ? 'active' : 'inative'"></span> <span>{{vehicle.status | status}}</span></td>
+      <td>
+        <img (click)="onEdit(vehicle.id)" src="assets/icons/edit-regular.svg" alt="Edit vehicle {{i}}">
+        <img (click)="onDelete(vehicle.id)" src="assets/icons/trash-alt-regular.svg" alt="Edit vehicle {{i}}">
+      </td>
+    </tr>
+
+  </tbody>
+</table>
+  <div class="pagination p-bottom-30">
+
+    <img src="assets/icons/arrow-left-solid.svg" alt="Arrow left solid" (click)="prev()">
+
+    <a *ngFor="let page of pagination" [ngClass]="page === currentPage ? 'active': ''" (click)="pageChoied(page)">{{page}}</a>
+
+    <img src="assets/icons/arrow-right-solid.svg" alt="Arrow right solid" (click)="next()">
+
+  </div>

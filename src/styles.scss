@@ -1,1 +1,139 @@
 /* You can add global styles to this file, and also import other style files */
+@import '/src/styles/partials/colors';
+
+* {
+  margin: 0;
+  padding: 0;
+
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+h1, h2, h3 {
+  color: $color-neutra-8;
+}
+
+.container-flex-justify-between {
+  display: flex;
+  justify-content: space-between;
+  margin: $space-16 $space-32;
+}
+
+.container-flex-align-center {
+  display: flex;
+  align-items: center;
+}
+
+.container-flex-justify-evenly {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.icon-svg-30 {
+  width: 30px;
+}
+
+.m-left-16 {
+  margin-left: $space-16;
+}
+
+.m-top-36 {
+  margin-top: $space-36;
+}
+
+
+.m-bottom-36 {
+  margin-bottom: $space-36;
+}
+
+.m-bottom-50 {
+  margin-bottom: 50px;
+}
+
+.m-bottom-72 {
+  margin-bottom: $space-36 * 2;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.m-g-16 {
+  margin: $space-16;
+}
+
+.m-g-36 {
+  margin: $space-36;
+}
+
+.p-top-bt-20 {
+  padding: 20px 0;
+}
+
+.p-top-30 {
+  padding-top: 30px;
+}
+
+.p-bottom-30 {
+  padding-bottom: 30px;
+}
+
+.max-width-30-vw {
+  margin: 0;
+  width: 30vw;
+}
+
+.max-width-30 {
+  width: 50%;
+}
+
+.absolute-right-top {
+  position: absolute;
+  right: 50px;
+  top: $space-36;
+}
+
+.error-text {
+  color: $color-error;
+  display: block;
+  font-size: $font-size-12;
+}
+
+
+@media only screen and (max-width: 420px) {
+
+  .p-top-30  {
+    padding-top: 40px;
+  }
+
+  .container-flex-justify-between {
+    margin: $space-16 ;
+  }
+}
+
+
+@media only screen and (max-width: 768px) {
+  .max-width-30-vw {
+    width: initial;
+  }
+
+  #car-imagem-form {
+    display: none;
+  }
+
+
+  .max-width-30 {
+    width: 90%;
+  }
+
+  .p-top-30  {
+    padding-top: 40px;
+  }
+
+  .container-flex-justify-between {
+    margin: $space-16 ;
+  }
+
+}

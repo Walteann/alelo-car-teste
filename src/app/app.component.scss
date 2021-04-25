@@ -1,0 +1,62 @@
+@import '/src/styles/partials/colors';
+
+main {
+  margin: $space-24 $space-24 $space-24 310px;
+  background-color: $color-neutra-2;
+  min-height: 93vh;
+  border-radius: $space-32;
+  box-shadow: 2px 3px 8px $color-neutra-6;
+  height: auto;
+  position: relative;
+  display: block;
+}
+
+// menu-sidebar > menu-collapse {
+//   display: none;
+// }
+// menu-collapse {
+//   display: none;
+// }
+
+@media only screen and (max-width: 320px) {
+  main {
+    margin: $space-8 4px !important;
+  }
+}
+
+@media only screen and (max-width: 420px) {
+  main {
+    margin: $space-8;
+    width: 96vw;
+    overflow-x: hidden;
+  }
+
+  // menu-sidebar > menu-collapse {
+  //   display: block;
+  // }
+
+}
+
+@media only screen and (max-width: 768px) {
+  main {
+    margin: $space-8 10px;
+  }
+
+  // menu-sidebar > menu-collapse  {
+  //   display: block;
+  // }
+
+}
+
+// @media only screen and (max-width: 425px) {
+//   main {
+//     margin: $space-8;
+//     width: 96vw;
+//     overflow-x: hidden;
+//   }
+
+//   menu-collapse {
+//     display: block;
+//   }
+// }
+

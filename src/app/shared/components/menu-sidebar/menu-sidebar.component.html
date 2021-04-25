@@ -1,0 +1,22 @@
+
+<div class="sidebar" id="sideBarMenu">
+
+  <img id="logo" src="assets/images/alelo-logo.png" alt="Alelo logo">
+
+  <h1>Alelo Frota</h1>
+
+  <ul>
+    <li *ngFor="let menu of menus" (click)="redirectToRoute(menu.url)" [ngClass]="menu.url === urlCurrent ? 'selected' : ''">
+      <img src="assets/icons/{{menu.icone}}.svg" [alt]="menu.name">
+      <span>{{menu.name}}</span>
+    </li>
+  </ul>
+
+
+</div>
+
+<menu-collapse
+#menuCollapse
+(isCollapsed)="changeMenuSideBar($event)"
+>
+</menu-collapse>

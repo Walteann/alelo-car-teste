@@ -1,0 +1,51 @@
+<div class="m-g-36">
+  <h2 class="p-top-bt-20">{{title}}</h2>
+
+  <img id="car-imagem-form" class="absolute-right-top" src="assets/images/car.png" alt="car">
+
+  <form [formGroup]="form" (submit)="onSubmit($event)">
+
+    <div class="m-bottom-50 max-width-30">
+      <alelo-input-text
+        [formControlName]="'plate'"
+        [label]="plateLabel">
+      </alelo-input-text>
+    </div>
+
+    <div class="m-bottom-50 max-width-30">
+      <alelo-input-text
+        [formControlName]="'model'"
+        label="Model">
+      </alelo-input-text>
+    </div>
+
+    <div class="m-bottom-50 max-width-30">
+      <alelo-input-text
+        [formControlName]="'manufacturer'"
+        label="Manufacturer">
+      </alelo-input-text>
+    </div>
+
+    <div class="m-bottom-50 max-width-30">
+      <alelo-input-text
+        [formControlName]="'color'"
+        label="Color">
+      </alelo-input-text>
+    </div>
+
+    <div class="m-bottom-50 max-width-30">
+      <alelo-input-radio
+        label="Status"
+        [name]="'status'"
+        [radioValues]="radioValues"
+        [formControlName]="'status'">
+      </alelo-input-radio>
+    </div>
+
+    <alelo-button [hidden]="true" type="submit" value="Save" className="magenta"></alelo-button>
+  </form>
+  <div class="max-width-30-vw container-flex-justify-evenly p-bottom-30">
+    <alelo-button (click)="resetAll()" type="button" value="Reset All" className="white"></alelo-button>
+    <alelo-button (click)="onSubmit($event)" type="submit" value="Save" className="magenta"></alelo-button>
+  </div>
+</div>
