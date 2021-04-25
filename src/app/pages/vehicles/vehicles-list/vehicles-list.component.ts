@@ -1,9 +1,8 @@
-import { AleloAlertService } from './../../../core/services/alelo-alert.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Component, OnDestroy, OnInit, Pipe } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Observable, Subscription } from 'rxjs';
-import { VehiclesService } from 'src/app/core/services';
+import { AleloAlertService, VehiclesService } from 'src/app/core/services';
 import { Vehicle } from 'src/app/shared/models';
 
 @Component({

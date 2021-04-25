@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'alelo-button',
@@ -6,12 +6,9 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./alelo-button.component.scss']
 })
 
-export class AleloButtonComponent implements OnInit {
+export class AleloButtonComponent {
 
   @Input() value: string = 'value';
   @Input() className: string = 'default';
 
-  constructor() { }
-
-  ngOnInit() { }
 }

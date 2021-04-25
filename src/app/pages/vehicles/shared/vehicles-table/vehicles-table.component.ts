@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Vehicle } from 'src/app/shared/models';
 
 @Component({
@@ -7,7 +7,7 @@ import { Vehicle } from 'src/app/shared/models';
   styleUrls: ['./vehicles-table.component.scss']
 })
 
-export class VehiclesTableComponent implements OnInit {
+export class VehiclesTableComponent {
 
   @Input() vehicles: Vehicle[];
   @Output() edit = new EventEmitter();
@@ -17,8 +17,6 @@ export class VehiclesTableComponent implements OnInit {
   currentPage = 1;
 
   pagination = [1, 2, 3, 4, 5];
-
-  ngOnInit() { }
 
   onEdit(id: string): void {
     this.edit.emit(id);

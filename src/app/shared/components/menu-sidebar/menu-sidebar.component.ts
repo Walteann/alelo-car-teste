@@ -41,8 +41,7 @@ export class MenuSidebarComponent implements OnInit, OnDestroy {
   ]
 
   constructor(
-    private router: Router,
-    private activatedRouter: ActivatedRoute
+    private router: Router
   ) { }
 
   ngOnInit(): void {

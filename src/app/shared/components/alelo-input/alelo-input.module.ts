@@ -5,10 +5,12 @@ import { AleloErrorModule } from '../alelo-error/alelo-error.module';
 
 import { AleloInputRadioComponent } from './alelo-input-radio/alelo-input-radio.component';
 import { AleloInputTextComponent } from './alelo-input-text/alelo-input-text.component';
+import { ControlValueAccessorConnector } from './control-value-acessor-connector';
 
 const SHARED_INPUT = [
   AleloInputTextComponent,
-  AleloInputRadioComponent
+  AleloInputRadioComponent,
+  ControlValueAccessorConnector
 ]
 
 @NgModule({

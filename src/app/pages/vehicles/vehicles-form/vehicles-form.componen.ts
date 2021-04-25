@@ -75,7 +75,6 @@ export class VehiclesFormComponent implements OnInit, OnDestroy {
 
   onSubmit(event): void {
     if (this.validate(this.form)) {
-      console.log('valido')
       if (this.activatedRoute.snapshot.params.id) {
         this.subscription = this.vehiclesService.updateVehicle(
             this.activatedRoute.snapshot.params.id, this.form.getRawValue())

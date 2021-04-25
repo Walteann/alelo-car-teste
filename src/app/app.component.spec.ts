@@ -1,12 +1,17 @@
 import { TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
+
 import { AppComponent } from './app.component';
+import { ComponentsModule } from './shared/components/components.module';
+import { MenuSidebarModule } from './shared/components/menu-sidebar/menu-sidebar.module';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [
-        RouterTestingModule
+        RouterTestingModule,
+        ComponentsModule,
+        MenuSidebarModule
       ],
       declarations: [
         AppComponent
@@ -26,10 +31,11 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('alelo-frota');
   });
 
-  it('should render title', () => {
+  it('should check loading$', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
-    const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('alelo-frota app is running!');
+
+    const app = fixture.componentInstance;
+    expect(app.ngAfterViewInit).toBeDefined();
   });
 });
