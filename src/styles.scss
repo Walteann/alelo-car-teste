@@ -147,6 +147,24 @@ h1, h2, h3 {
   font-size: $font-size-12;
 }
 
+.btn-plus {
+  display: none;
+  width: 45px;
+  height: 45px;
+
+  background:
+    linear-gradient($color-neutra-1,$color-neutra-1),
+    linear-gradient($color-neutra-1,$color-neutra-1),
+    $magenta;
+  background-position:center;
+  background-size: 50% 2px,2px 50%; /*thickness = 2px, length = 50% (25px)*/
+  background-repeat:no-repeat;
+  box-shadow: 0px 3px 10px $color-neutra-5;
+  cursor: pointer;
+  border-radius: $space-4;
+  transition: .5s;
+}
+
 
 @media only screen and (max-width: 420px) {
   .p-top-30  {
@@ -154,6 +172,18 @@ h1, h2, h3 {
   }
   .container-flex-justify-between {
     @include marginAll($space-16);
+  }
+
+  .btn-plus {
+    display: inline-block;
+  }
+
+  #btn-add-vehicle {
+    display: none;
+  }
+
+  .container-flex-align-center {
+    width: 70%;
   }
 
 }

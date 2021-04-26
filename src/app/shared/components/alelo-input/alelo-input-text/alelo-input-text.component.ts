@@ -22,6 +22,7 @@ export class AleloInputTextComponent extends ControlValueAccessorConnector {
   @Input() type: string = 'text';
   @Input() isSubmitEnter: boolean = false;
   @Input() label: string = null;
+  @Input() maxLength: number;
 
   @Output() enterSubmit = new EventEmitter();
 

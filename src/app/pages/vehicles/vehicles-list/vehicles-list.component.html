@@ -11,6 +11,7 @@
       <alelo-input-text
         (enterSubmit)="searchPlate()"
         placeholder="plate search"
+        maxLength="8"
         [formControlName]="'filter'">
       </alelo-input-text>
 
@@ -22,7 +23,8 @@
       (click)="searchPlate()"
     >
   </div>
-  <alelo-button (click)="onAdd()" value="Add Vehicle +" className="magenta"></alelo-button>
+  <div class="btn-plus" (click)="onAdd()"></div>
+  <alelo-button id="btn-add-vehicle" (click)="onAdd()" value="Add Vehicle +" className="magenta"></alelo-button>
 </div>
 
 <vehicles-table
