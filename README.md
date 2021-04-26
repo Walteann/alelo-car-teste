@@ -1,27 +1,59 @@
-# AleloFrota
+# Alelo Frota Teste
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.7.
+Esse é um layout baseado no Front end teste da Alelo Frota.
+https://github.com/alelofrota/front-end-test
 
-## Development server
+Arquitetura
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+- Angular CLI version 10.1.7
+- Node 14.15.5
+- SCSS
 
-## Code scaffolding
+## Expectativa do Desafio
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- Utilização de rotas;
+- Paginação
+- Filtro buscando na API
+- Layout responsivo
+- Metodologia CSS
+- Mixins, placeholders, functions, variáveis, animações, loaders...
+- Rxjs
+- Tratamento de erros
+- Teste unitário
 
-## Build
+**Layout do desafio**: https://github.com/alelofrota/front-end-test/blob/master/LAYOUT.md
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## Layout do sistema.
 
-## Running unit tests
+ 1440px
+<p align="center">
+  <img src="./redme-layouts/layout-desktop-1440.png">
+</p>
+1024px
+<p align="center">
+  <img src="./redme-layouts/layout-desktop-edit-1024.png">
+</p>
+1024px
+<p align="center">
+  <img src="./redme-layouts/layout-desktop-1024.png">
+</p>
+425px
+<p align="center">
+  <img src="./redme-layouts/layout-mobile-425.png">
+</p>
+320px
+<p align="center">
+  <img src="./redme-layouts/layout-mobile-320.png">
+</p>
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Teste unitários
 
-## Running end-to-end tests
+<p align="center">
+  <img src="./redme-layouts/test-unit.PNG">
+</p>
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+## Cobertura
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+<p align="center">
+  <img src="./redme-layouts/coverage.PNG">
+</p>
